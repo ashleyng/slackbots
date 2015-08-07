@@ -9,7 +9,7 @@ var token = 'xoxb-8766272068-HcErbipxskzfTa8ea1rX5YvZ'
 
 var slack = new Slack(token, true, true);
  
-// slack.login();
+slack.login();
 
 // slack.on('message', function(message) {
 //   var lowercase = message.toLowerCase();

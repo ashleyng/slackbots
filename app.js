@@ -1,4 +1,6 @@
 var hellobot = require('./hellobot');
+var gilbot = require('./gilbot');
+
 var express = require('express');
 var bodyParser = require('body-parser');
  
@@ -22,3 +24,4 @@ app.listen(port, function () {
 });
 
 app.post('/hello', hellobot);
+app.post('/gilbot', gilbot)

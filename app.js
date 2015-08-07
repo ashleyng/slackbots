@@ -1,5 +1,5 @@
-var hellobot = require('./hellobot');
-var gilbot = require('./gilbot');
+// var hellobot = require('./hellobot');
+// var gilbot = require('./gilbot');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -41,5 +41,5 @@ app.listen(port, function () {
   console.log('Slack bot listening on port ' + port);
 });
 
-app.post('/hello', hellobot);
-app.post('/gilbot', gilbot)
+// app.post('/hello', hellobot);
+// app.post('/gilbot', gilbot)

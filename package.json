@@ -5,6 +5,9 @@
 	  "express":"^4.x.x",
 	  "body-parser": "^1.x.x"
 	},
+  "engines": {
+    "node": "^0.10.x"
+  }
   "description": "slack bot",
   "main": "index.js",
   "scripts": {

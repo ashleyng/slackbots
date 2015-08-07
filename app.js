@@ -5,19 +5,19 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-client');
 
-var token = 'xoxb-8766272068-HcErbipxskzfTa8ea1rX5YvZ'
+// var token = 'xoxb-8766272068-HcErbipxskzfTa8ea1rX5YvZ'
 
-var slack = new Slack(token, true, true);
+// var slack = new Slack(token, true, true);
  
-slack.login();
+// slack.login();
 
-slack.on('message', function(message) {
-  var lowercase = message.toLowerCase();
+// slack.on('message', function(message) {
+//   var lowercase = message.toLowerCase();
 
-  if (lowercase.indexOf("dude")) {
-    channel.send('Dude, chill!') 
-  }
-})
+//   if (lowercase.indexOf("dude")) {
+//     channel.send('Dude, chill!') 
+//   }
+// })
  
 var app = express();
 var port = process.env.PORT || 3000;

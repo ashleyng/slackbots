@@ -13,9 +13,9 @@ slack.on('message', function(message) {
   var messagetext = message.text
   var lowercase = messagetext.toLowerCase();
 
-  if (lowercase.indexOf("dude") > -1) {
-    channel.send('Dude, chill!') 
-  }
+  // if (lowercase.indexOf("dude") > -1) {
+  //   channel.send('Dude, chill!') 
+  // }
 })
 
 slack.login();

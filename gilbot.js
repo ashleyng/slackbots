@@ -11,11 +11,3 @@ module.exports = function (req, res, next) {
     return res.status(200).end();
   }
 }
-
-slack.on('message', function(message) {
-  var lowercase = message.toLowerCase();
-
-  if (lowercase.indexOf("dude")) {
-    channel.send('Dude, chill!') 
-  }
-})

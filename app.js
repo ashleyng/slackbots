@@ -11,10 +11,11 @@ var slack = new Slack(token, true, true);
  
 slack.on('message', function(message) {
   var messagetext = message.text
+  var channel = slack.getChannelGroupOrDMByID(message.channel);
   var lowercase = messagetext.toLowerCase();
   console.log(message);
 
-  if (lowercase.indexOf("dude") > -1) {
+  if (lowercase === "dude") {
     channel.send('Dude, chill!') 
   }
 })

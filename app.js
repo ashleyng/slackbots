@@ -10,8 +10,9 @@ var token = 'xoxb-8766272068-HcErbipxskzfTa8ea1rX5YvZ'
 var slack = new Slack(token, true, true);
  
 slack.on('message', function(message) {
-  var messagetext = message.text
-  var lowercase = messagetext.toLowerCase();
+  // var messagetext = message.text
+  // var lowercase = messagetext.toLowerCase();
+  console.log(message)
 
   // if (lowercase.indexOf("dude") > -1) {
   //   channel.send('Dude, chill!') 

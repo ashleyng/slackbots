@@ -5,7 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-client');
 
-var token = 'xoxb-8766272068-HcErbipxskzfTa8ea1rX5YvZ'
+var token = 'xoxb-8763789941-QBvyNgGhW9ziBPVCFbvs8jdL'
 
 var slack = new Slack(token, true, true);
  
@@ -16,7 +16,7 @@ slack.on('message', function(message) {
   var lowercase = messagetext.toLowerCase();
   var exclamationmarks = lowercase.match(/!/g);
 
-  if (channel.name !== 'random' && user.name !== 'gilbot') {
+  if (channel.name !== 'allagile' && user.name !== 'gilbot') {
     if (lowercase === "dude") {
       channel.send('Dude, chill!') 
     }

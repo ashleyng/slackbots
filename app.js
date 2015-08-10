@@ -14,7 +14,7 @@ slack.on('message', function(message) {
   var messagetext = message.text
   var channel = slack.getChannelGroupOrDMByID(message.channel);
   var lowercase = messagetext.toLowerCase();
-  console.log(user + " " + channel);
+  console.log(user.real_name + " " + channel.real_name);
 
   // if (channel !== 'general') {
     if (lowercase === "dude") {

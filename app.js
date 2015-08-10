@@ -14,7 +14,7 @@ slack.on('message', function(message) {
   var messagetext = message.text
   var channel = slack.getChannelGroupOrDMByID(message.channel);
   var lowercase = messagetext.toLowerCase();
-  var exclamation_count = (lowercase.match(/!/g)).length;
+  var exclamation_count = lowercase.match(/!/g).length;
 
   if (channel.name !== 'general' && user.name !== 'gilbot') {
     if (lowercase === "dude") {

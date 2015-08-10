@@ -31,7 +31,7 @@ slack.on('message', function(message) {
       else if (lowercase.indexOf("smash") > -1) {
         channel.send("Dude, Smash!");
       }
-      else if (lowercase.indexOf("choo") > -1) {
+      else if (lowercase.indexOf("choo") > -1 || lowercase.indexOf('dinner') > -1) {
         channel.send("CHOO CHOO! :steam_locomotive:")
       }
       else if (lowercase == "unleash the horses" || lowercase.indexOf(":horse:") > -1) {

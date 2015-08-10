@@ -35,7 +35,7 @@ slack.on('message', function(message) {
         channel.send("CHOO CHOO! :steam_locomotive:")
       }
       else if (lowercase == "unleash the horses" || lowercase.indexOf(":horse:") > -1) {
-        channel.send(":horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: ");
+        channel.send(":horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: ");
       }
     }
   }

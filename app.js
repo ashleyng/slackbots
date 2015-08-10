@@ -34,6 +34,9 @@ slack.on('message', function(message) {
       else if (lowercase.indexOf("choo") > -1) {
         channel.send("CHOO CHOO! :steam_locomotive:")
       }
+      else if (lowercase == "unleash the horses" || lowercase.indexOf(":horse:") > -1) {
+        channel.send(":horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: ");
+      }
     }
   }
 })

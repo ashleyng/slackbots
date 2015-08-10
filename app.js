@@ -11,18 +11,20 @@ var slack = new Slack(token, true, true);
  
 slack.on('message', function(message) {
   var user = slack.getUserByID(message.user);
-  var channel_name = slack.getChannelByID(slack.channel);
   var messagetext = message.text
   var channel = slack.getChannelGroupOrDMByID(message.channel);
   var lowercase = messagetext.toLowerCase();
-  console.log("user: " + user.name + " channel: " + channel.name);
+  var exclamation_count = (lowercase.match(/!/g)).length;
 
-  // if (channel !== 'general') {
+  if (channel.name !== 'general' && user.name !== 'gilbot') {
     if (lowercase === "dude") {
       channel.send('Dude, chill!') 
     }
+    else if (exclamation_count >= 2) {
+      channel.send('Dude, chill!')
+    }
 
-  // }
+  }
 })
 
 slack.login();

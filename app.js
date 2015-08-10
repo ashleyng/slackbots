@@ -16,7 +16,7 @@ slack.on('message', function(message) {
   var lowercase = messagetext.toLowerCase();
   var exclamationmarks = lowercase.match(/!/g);
 
-  if (channel.name !== 'general' && user.name !== 'gilbot') {
+  if (channel.name !== 'random' && user.name !== 'gilbot') {
     if (lowercase === "dude") {
       channel.send('Dude, chill!') 
     }

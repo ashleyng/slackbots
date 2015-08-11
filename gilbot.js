@@ -1,4 +1,6 @@
 function gilbot(channel, lowercase) {
+  var exclamationmarks = lowercase.match(/!/g);
+  
   if (lowercase === "dude") {
     channel.send('Dude, chill.') 
   }

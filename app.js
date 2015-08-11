@@ -1,28 +1,43 @@
 // var hellobot = require('./hellobot');
-var gilbot = require('./gilbot');
+var gilbot_file = require('./gilbot');
 
 var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-client');
 
-var slack = new Slack(process.env.SLACK_TOKEN, true, true);
+var gilbot_slack = new Slack(process.env.GILBOT_SLACK_TOKEN, true, true);
+var wilbot_slack = new Slack(process.env.WILBOT_SLACK_TOKEN, true, true);
  
-slack.on('message', function(message) {
+gilbot_slack.on('message', function(message) {
   var user = slack.getUserByID(message.user);
   var messagetext = message.text
   var channel = slack.getChannelGroupOrDMByID(message.channel);
 
-  if (messagetext) {
+  if (messagetext && channel.name !== 'allagile') {
     var lowercase = messagetext.toLowerCase();
-    var exclamationmarks = lowercase.match(/!/g);
 
-    if (channel.name !== 'allagile' && user.name !== 'gilbot') {
-      gilbot.gilbot(channel, lowercase);
+    if (user.name !== 'gilbot' && user.name !== "wilbot") {
+      gilbot_file.gilbot(channel, lowercase);
     }
   }
 })
 
-slack.login();
+wilbot_slack.on('message', function(message) {
+  var user = slack.getUserByID(message.user);
+  var messagetext = message.text
+  var channel = slack.getChannelGroupOrDMByID(message.channel);
+
+  if (messagetext && channel.name !== 'allagile') {
+    var lowercase = messagetext.toLowerCase();
+
+    if (user.name !== "wilbot" && lowercase === 'dude, chill.') {
+      channel.send('Dude, fuck off.')
+    }
+  }
+})
+
+gilbot_slack.login();
+wilbot_slack.login();
  
 var app = express();
 var port = process.env.PORT || 3000;
@@ -42,6 +57,3 @@ app.use(function (err, req, res, next) {
 app.listen(port, function () {
   console.log('Slack bot listening on port ' + port);
 });
-
-// app.post('/hello', hellobot);
-// app.post('/gilbot', gilbot)

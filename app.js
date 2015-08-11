@@ -9,9 +9,9 @@ var gilbot_slack = new Slack(process.env.GILBOT_SLACK_TOKEN, true, true);
 var wilbot_slack = new Slack(process.env.WILBOT_SLACK_TOKEN, true, true);
  
 gilbot_slack.on('message', function(message) {
-  var user = slack.getUserByID(message.user);
+  var user = gilbot_slack.getUserByID(message.user);
   var messagetext = message.text
-  var channel = slack.getChannelGroupOrDMByID(message.channel);
+  var channel = gilbot_slack.getChannelGroupOrDMByID(message.channel);
 
   if (messagetext && channel.name !== 'allagile') {
     var lowercase = messagetext.toLowerCase();
@@ -23,9 +23,9 @@ gilbot_slack.on('message', function(message) {
 })
 
 wilbot_slack.on('message', function(message) {
-  var user = slack.getUserByID(message.user);
+  var user = wilbot_slack.getUserByID(message.user);
   var messagetext = message.text
-  var channel = slack.getChannelGroupOrDMByID(message.channel);
+  var channel = wilbot_slack.getChannelGroupOrDMByID(message.channel);
 
   if (messagetext && channel.name !== 'allagile') {
     var lowercase = messagetext.toLowerCase();

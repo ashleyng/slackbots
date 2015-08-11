@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var Slack = require('slack-client');
 
 var gilbot_slack = new Slack(process.env.GILBOT_SLACK_TOKEN, true, true);
-var wilbot_slack = new Slack(process.env.WILBOT_SLACK_TOKEN, true, true);
+// var wilbot_slack = new Slack(process.env.WILBOT_SLACK_TOKEN, true, true);
  
 gilbot_slack.on('message', function(message) {
   var user = gilbot_slack.getUserByID(message.user);
@@ -22,22 +22,22 @@ gilbot_slack.on('message', function(message) {
   }
 })
 
-wilbot_slack.on('message', function(message) {
-  var user = wilbot_slack.getUserByID(message.user);
-  var messagetext = message.text
-  var channel = wilbot_slack.getChannelGroupOrDMByID(message.channel);
+// wilbot_slack.on('message', function(message) {
+//   var user = wilbot_slack.getUserByID(message.user);
+//   var messagetext = message.text
+//   var channel = wilbot_slack.getChannelGroupOrDMByID(message.channel);
 
-  if (messagetext && channel.name !== 'allagile') {
-    var lowercase = messagetext.toLowerCase();
+//   if (messagetext && channel.name !== 'allagile') {
+//     var lowercase = messagetext.toLowerCase();
 
-    if (user.name !== "wilbot" && lowercase === 'dude, chill.') {
-      channel.send('Dude, fuck off.')
-    }
-  }
-})
+//     if (user.name !== "wilbot" && lowercase === 'dude, chill.') {
+//       channel.send('Dude, fuck off.')
+//     }
+//   }
+// })
 
 gilbot_slack.login();
-wilbot_slack.login();
+// wilbot_slack.login();
  
 var app = express();
 var port = process.env.PORT || 3000;

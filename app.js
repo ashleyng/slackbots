@@ -1,13 +1,11 @@
 // var hellobot = require('./hellobot');
-// var gilbot = require('./gilbot');
+var gilbot = require('./gilbot');
 
 var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-client');
 
-var token = 'xoxb-8763789941-QBvyNgGhW9ziBPVCFbvs8jdL'
-
-var slack = new Slack(token, true, true);
+var slack = new Slack(process.env.SLACK_TOKEN, true, true);
  
 slack.on('message', function(message) {
   var user = slack.getUserByID(message.user);
@@ -19,24 +17,7 @@ slack.on('message', function(message) {
     var exclamationmarks = lowercase.match(/!/g);
 
     if (channel.name !== 'allagile' && user.name !== 'gilbot') {
-      if (lowercase === "dude") {
-        channel.send('Dude, chill.') 
-      }
-      else if (exclamationmarks && exclamationmarks.length >= 2) {
-        channel.send('Dude, chill.')
-      }
-      else if (lowercase.indexOf("lemonade") > -1 || lowercase.indexOf("milkshake") > -1) {
-        channel.send('Dude, lemonade and milkshakes.')
-      }
-      else if (lowercase.indexOf("smash") > -1) {
-        channel.send("Dude, Smash!");
-      }
-      else if (lowercase.indexOf("choo") > -1 || lowercase.indexOf('dinner') > -1) {
-        channel.send("CHOO CHOO! :steam_locomotive:")
-      }
-      else if (lowercase == "unleash the horses" || lowercase.indexOf(":horse:") > -1) {
-        channel.send(":horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: :horse: ");
-      }
+      gilbot.gilbot(channel, lowercase);
     }
   }
 })

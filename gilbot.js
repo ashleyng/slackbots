@@ -19,3 +19,4 @@ function gilbot(channel, lowercase) {
   }
 }
 
+exports.gilbot = gilbot;
